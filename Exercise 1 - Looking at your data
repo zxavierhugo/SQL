@@ -7,5 +7,17 @@
  %sql USE dognitiondb                  /* Can start using the database after connecting with it.
  %sql SHOW tables                      /* To reveal the names of tables in the databses. In this case there are 6 tables.
  %sql SHOW columns from dogs           /* To reveal the number of columns and details e.g. gender, breed from 'dogs' table.
- 
+ %sql DESCRIBE dogs                    /* Same as above. Same output.
+
+%%sql
+SELECT breed
+FROM dogs LIMIT 5;
+
+%sql                                    /* To start from 5th row for another 10 more rows; 5th to 10th row
+SELECT breed
+FROM dogs LIMIT 10 OFFSET 5;
+
+%sql
+SELECT breed, breed_type, breed_group
+FROM dogs LIMIT 5, 10;
 
