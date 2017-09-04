@@ -1,0 +1,3 @@
+
+%load_ext sql /* The sql extension is already loaded. To reload it, use %reload_ext sql
+
