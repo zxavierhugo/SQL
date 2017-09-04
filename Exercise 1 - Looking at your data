@@ -1,3 +1,11 @@
-
-%load_ext sql /* The sql extension is already loaded. To reload it, use %reload_ext sql
+                                                              /*Since it uses python interface, must use %sql
+%load_ext sql                                                 /* The sql extension is already loaded. 
+                                                              /*To reload it, use %reload_ext sql
+%sql mysql://studentuser:studentpw@mysqlserver/dognitiondb    /*The second thing you must do every time you want to start 
+                                                              /*working with a database: connect to the database you need to 
+                                                              /* use.
+ %sql USE dognitiondb                  /* Can start using the database after connecting with it.
+ %sql SHOW tables                      /* To reveal the names of tables in the databses. In this case there are 6 tables.
+ %sql SHOW columns from dogs           /* To reveal the number of columns and details e.g. gender, breed from 'dogs' table.
+ 
 
