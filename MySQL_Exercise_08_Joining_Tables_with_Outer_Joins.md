@@ -53229,8 +53229,37 @@ WHERE d.user_guid IS NULL;
 
 
 ```python
-
+%%sql
+SELECT s.dog_guid AS SA_dogs_not_present_in_dogs_table, COUNT(*) AS
+NumEntries
+FROM site_activities s LEFT JOIN dogs d
+ON s.dog_guid=d.dog_guid
+WHERE d.dog_guid IS NULL AND s.dog_guid IS NOT NULL
+GROUP BY SA_dogs_not_present_in_dogs_table;
 ```
+
+    2 rows affected.
+
+
+
+
+
+<table>
+    <tr>
+        <th>SA_dogs_not_present_in_dogs_table</th>
+        <th>NumEntries</th>
+    </tr>
+    <tr>
+        <td>Membership</td>
+        <td>5587</td>
+    </tr>
+    <tr>
+        <td>PortalContent</td>
+        <td>12</td>
+    </tr>
+</table>
+
+
 
 **Practice any other outer joins you are interested in here!**
 
